@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated type stubs (reinstall with: pip install fake-bpy-module --target typings)
+typings/
+
+# Blender profile created by the VS Code Blender extension
+blender_vscode_development/
+
+# Blender backup files, and built extension packages
+*.blend1
+*.blend2
+*.zip
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store

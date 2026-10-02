@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "kinetic_forge"
+version = "0.1.0"
+name = "Kinetic Forge"
+tagline = "Blender → Roblox pipeline for baked rigid-body destruction"
+maintainer = "Zachary Humphreys https://github.com/Zaphrey"
+type = "add-on"
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
