@@ -18,3 +18,6 @@ blender_vscode_development/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# JSON testing
+clipboard.json
