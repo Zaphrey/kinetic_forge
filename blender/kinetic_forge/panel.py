@@ -31,7 +31,19 @@ class KineticForgePanel(bpy.types.Panel):
         box.prop(settings, "friction", slider=True)
         box.prop(settings, "bounciness", slider=True)
         box.prop(settings, "break_threshold", slider=True)
+        box.prop(settings, "collision_margin", slider=True)
+
+        box.separator(type="LINE")
+
+        box.prop(settings, "collision_shape")
+
+        box.separator(type="LINE")
+
+        box.prop(settings, "use_breaking")
+        box.prop(settings, "disable_collisions")
+        box.prop(settings, "connect_touching")
+
         box.operator("kinetic_forge.add_rigidbodies_to_selected", icon='MOD_EXPLODE')
 
-        box = layout.box()
-        box.label(text="Adjust Rigid Body Settings")
+        # box = layout.box()
+        # box.label(text="Adjust Rigid Body Settings")

@@ -51,7 +51,7 @@ def scan_selected_objects():
             for f_curve in channel_bag.fcurves:
                 for frame in frames:
                     if frame not in data[obj.name]:
-                        data[obj.name][frame] = [None, None, None, None, None, None, None]
+                        data[obj.name][frame] = [None, None, None, None, None, None]
                                             
                     match f_curve.data_path:
                         case "location":

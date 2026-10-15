@@ -53,7 +53,7 @@ class KINETIC_FORGE_OT_add_rigidbodies_to_selected(bpy.types.Operator):
     def execute(self, context: bpy.types.Context) -> set[str]:
         rewind_simulation(context)
         settings = context.scene.kinetic_forge
-        meshes = apply_rigid_bodies_to_selected(settings.friction, settings.bounciness, settings.break_threshold)
+        meshes = apply_rigid_bodies_to_selected(settings.friction, settings.bounciness, settings.break_threshold, settings.disable_collisions, settings.collision_margin, settings.connect_touching, settings.body_mass, settings.collision_shape, settings.use_breaking)
 
         if not meshes:
             self.report({'WARNING'}, "No mesh objects selected")
