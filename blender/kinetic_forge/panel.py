@@ -31,11 +31,16 @@ class KineticForgePanel(bpy.types.Panel):
         box.prop(settings, "friction", slider=True)
         box.prop(settings, "bounciness", slider=True)
         box.prop(settings, "break_threshold", slider=True)
+        box.prop(settings, "break_randomness", slider=True)
+        box.prop(settings, "break_seed")
         box.prop(settings, "collision_margin", slider=True)
+        box.prop(settings, "body_mass", slider=True)
 
         box.separator(type="LINE")
 
+        box.prop(settings, "body_type")
         box.prop(settings, "collision_shape")
+        box.prop(settings, "constraint_type")
 
         box.separator(type="LINE")
 
@@ -44,6 +49,12 @@ class KineticForgePanel(bpy.types.Panel):
         box.prop(settings, "connect_touching")
 
         box.operator("kinetic_forge.add_rigidbodies_to_selected", icon='MOD_EXPLODE')
+
+        box = layout.box()
+        box.label(text="Export")
+        box.operator("kinetic_forge.bake_to_keyframes", icon='KEYFRAME')
+        box.operator("kinetic_forge.copy_keyframes", icon='COPYDOWN')
+
 
         # box = layout.box()
         # box.label(text="Adjust Rigid Body Settings")

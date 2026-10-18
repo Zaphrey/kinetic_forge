@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  // Rokit's tools, so tasks find Rojo even when VS Code was opened before Rokit was installed
+  "options": {
+    "env": { "PATH": "${env:USERPROFILE}\\.rokit\\bin;${env:PATH}" }
+  },
+  "tasks": [
+    {
+      // Live-syncs the plugin into PluginDebugService. Connect from the Rojo plugin in Studio.
+      "label": "Serve plugin",
+      "type": "shell",
+      "command": "rojo",
+      "args": ["serve", "debug.project.json"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      // Keeps sourcemap.json current so luau-lsp can resolve requires to new files
+      "label": "Watch sourcemap",
+      "type": "shell",
+      "command": "rojo",
+      "args": ["sourcemap", "default.project.json", "--output", "sourcemap.json", "--watch"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      // Starts both when the folder opens
+      "label": "Watch plugin",
+      "dependsOn": ["Serve plugin", "Watch sourcemap"],
+      "problemMatcher": [],
+      "runOptions": { "runOn": "folderOpen" }
+    },
+    {
+      // Installs the plugin into Studio's local plugins folder. Serve plugin syncs into this
+      // installed copy, so run this once before serving.
+      "label": "Build plugin",
+      "type": "shell",
+      "command": "rojo",
+      "args": ["build", "default.project.json", "--plugin", "KineticForge.rbxm"],
+      "problemMatcher": []
+    }
+  ]
+}

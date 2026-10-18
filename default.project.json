@@ -1,0 +1,27 @@
+{
+  "name": "KFPlugin",
+  "globIgnorePaths": ["**/*.d.luau", "**/*.py"],
+  "syncRules": [
+    {
+      "pattern": "*.legacy.luau",
+      "use": "legacyServerScript",
+      "suffix": ".legacy.luau"
+    }
+  ],
+  "tree": {
+    "$className": "Folder",
+
+    "KineticForgeMain": {
+      "$path": "roblox/KineticForgeMain/init.legacy.luau",
+
+      "App": { "$path": "roblox/KineticForgeMain/App.luau" },
+      "KeyframeData": { "$path": "roblox/KineticForgeMain/KeyframeData.luau" },
+      "SequencePlayer": { "$path": "roblox/KineticForgeMain/SequencePlayer.luau" },
+      "Skeleton": { "$path": "roblox/KineticForgeMain/Skeleton.luau" },
+      "Types": { "$path": "roblox/KineticForgeMain/Types.luau" },
+      "Trove": { "$path": "roblox/KineticForgeMain/Trove.luau" },
+      "Markup": { "$path": "roblox/KineticForgeMain/Markup" },
+      "UIParser": { "$path": "roblox/KineticForgeMain/UIParser" }
+    }
+  }
+}

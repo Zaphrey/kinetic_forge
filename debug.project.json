@@ -1,0 +1,18 @@
+{
+  "name": "KFPluginDebug",
+  "tree": {
+    "$className": "DataModel",
+
+    "PluginDebugService": {
+      "$className": "PluginDebugService",
+
+      // Studio only allows Plugin instances here, and scripts can't create one. So this syncs into
+      // the one Studio makes for the installed KineticForge.rbxm: run the Build plugin task first.
+      "user_KineticForge.rbxm": {
+        "$className": "Plugin",
+
+        "KFPlugin": { "$path": "default.project.json" }
+      }
+    }
+  }
+}

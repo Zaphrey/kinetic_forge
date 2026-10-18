@@ -1,7 +1,8 @@
 import bpy
 
 from .fracture import fracture
-from .operators import KINETIC_FORGE_OT_add_rigidbodies_to_selected, KINETIC_FORGE_OT_fracture
+from .operators import KINETIC_FORGE_OT_add_rigidbodies_to_selected, KINETIC_FORGE_OT_bake_to_keyframes, KINETIC_FORGE_OT_copy_keyframes, KINETIC_FORGE_OT_fracture
+
 from .panel import KineticForgePanel
 from .props import KineticForgeSettings
 
@@ -11,6 +12,8 @@ classes = (
     KineticForgeSettings,
     KINETIC_FORGE_OT_fracture,
     KINETIC_FORGE_OT_add_rigidbodies_to_selected,
+    KINETIC_FORGE_OT_bake_to_keyframes,
+    KINETIC_FORGE_OT_copy_keyframes,
     KineticForgePanel,
 )
 
